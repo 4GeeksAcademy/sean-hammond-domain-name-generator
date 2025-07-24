@@ -22,14 +22,24 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 };
 
-// Looping through an array
+
 let text = "";
-let loopThrough = (arrayName) => {
-  for (let i = 0; i < arrayName.length; i++) {
-    text = text + arrayName[i] + "<br>";
+
+// Looping through an array
+let iLoop = () => {
+  for (let i = 0; i < arrayLimit; i++) {
+    text = text + possList[i] + adjList(j);
     document.getElementById(".listHere").innerHTML = text;
   }
 };
+
+let jLoop = () => {
+  iLoop();
+}
+
+let kLoop = () => {
+  jLoop();
+} 
 
 window.onload = function() {
   //write your code here
