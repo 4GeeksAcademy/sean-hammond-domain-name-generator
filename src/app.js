@@ -12,9 +12,16 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 };
 
+// Looping through an array
+let loopThrough = (arrayName) => {
+  for (let i = 0; i < arrayName.length; i++) {
+    text += arrayName[i] + "<br>";
+  }
+};
+
 window.onload = function() {
   //write your code here
-  let possList = ['My', 'Their', 'Yalls'];
+  let possList = ['My', 'Their', 'Yalls']; // possessives
   let adjList = ['Fun', 'Cool', 'Blue'];
   let nounList = ['Pizza', 'Book', 'Jedi'];
   let extList = ['com', 'us', 'va', 'io']
