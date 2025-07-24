@@ -3,7 +3,17 @@ import "./style.css";
 
 
 import "./assets/img/rigo-baby.jpg";
+import "./assets/img/pexelsFreeScrabble.png";
 import "./assets/img/4geeks.ico";
+
+//declaring the arrays
+let possList = ['My', 'Their', 'Yalls']; // possessives
+let adjList = ['Fun', 'Cool', 'Blue'];
+let nounList = ['Pizza', 'Book', 'Jedi'];
+let extList = ['com', 'us', 'me', 'va', 'cat']
+
+// getting max array length to avoid hard-code
+let arrayLimit = Math.min(possList, adjList, nounList);
 
 // Random integer generator
 function getRandomIntInclusive(min, max) {
@@ -17,17 +27,12 @@ let text = "";
 let loopThrough = (arrayName) => {
   for (let i = 0; i < arrayName.length; i++) {
     text = text + arrayName[i] + "<br>";
-    document.getElementById("demo").innerHTML = text;
+    document.getElementById(".listHere").innerHTML = text;
   }
 };
 
 window.onload = function() {
   //write your code here
-  let possList = ['My', 'Their', 'Yalls']; // possessives
-  let adjList = ['Fun', 'Cool', 'Blue'];
-  let nounList = ['Pizza', 'Book', 'Jedi'];
-  let extList = ['com', 'us', 'va', 'io']
-
   possWord = getRandomIntInclusive(1, possessiveList.length);
   adjWord = getRandomIntInclusive(1, adjList.length);
   nounWord = getRandomIntInclusive(1, nounList.length);
