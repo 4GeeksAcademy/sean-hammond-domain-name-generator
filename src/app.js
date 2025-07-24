@@ -13,9 +13,11 @@ function getRandomIntInclusive(min, max) {
 };
 
 // Looping through an array
+let text = "";
 let loopThrough = (arrayName) => {
   for (let i = 0; i < arrayName.length; i++) {
-    text += arrayName[i] + "<br>";
+    text = text + arrayName[i] + "<br>";
+    document.getElementById("demo").innerHTML = text;
   }
 };
 
