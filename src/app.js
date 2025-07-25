@@ -7,10 +7,10 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function () {
   // Declaring the arrays
-  let possList = ["My", "Their", "Yalls"]; // possessives
-  let adjList = ["Fun", "Cool", "Blue"];
+  let possList = ["My", "Our", "Yalls"]; // possessives
+  let adjList = ["Fun", "Texan", "Red"];
   let nounList = ["Pet", "Guava", "Jedi"];
-  let extList = ["com", "us", "me", "va", "cat"];
+  let extList = ["us", "me", "va", "cat"];
 
   // Random integer generator
   function getRandomIntInclusive(min, max) {
@@ -28,8 +28,13 @@ window.onload = function () {
     for (let j = 0; j < adjList.length; j++) {
       for (let k = 0; k < nounList.length; k++) {
         let extText = extList[getRandomIntInclusive(0, extList.length - 1)];
+        // Special domain hack for "Guava"
+        let nounText = nounList[k];
+        if (extText == "va" && nounList[k] == "Guava") {
+          nounText = "Gua";
+        }
         output +=
-          possList[i] + adjList[j] + nounList[k] + "." + extText + "<br>";
+          possList[i] + adjList[j] + nounText + "." + extText + "<br>";
         numDomains += 1;
       }
       output += "<br>";
