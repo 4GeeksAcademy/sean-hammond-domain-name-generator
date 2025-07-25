@@ -12,3 +12,11 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+.listHere {
+    margin-bottom: 200px;
+}
+
+.fixed-bottom {
+    background-color: white;
+}

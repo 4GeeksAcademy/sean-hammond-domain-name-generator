@@ -6,9 +6,7 @@ import "./assets/img/pexelsFreeScrabble.png";
 import "./assets/img/4geeks.ico";
 
 window.onload = function () {
-  //write your code here
-
-  //declaring the arrays
+  // Declaring the arrays
   let possList = ["My", "Their", "Yalls"]; // possessives
   let adjList = ["Fun", "Cool", "Blue"];
   let nounList = ["Pizza", "Book", "Jedi"];
@@ -21,17 +19,19 @@ window.onload = function () {
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
   }
 
-  // nested for loops
+  // string that will be displayed
+  let output = "";
+
+  // Nested for loops to get domain combos
   for (let i = 0; i < possList.length; i++) {
-    let iText = possList(i);
-    let jText = adjList(1);
-    let kText = nounList(1);
-    let extText = extList(getRandomIntInclusive(0, extList.length - 1));
-    document.getElementById(".listHere").innerHTML =
-      iText + jText + kText + "." + extText;
-  }
+        for (let j = 0; j < adjList.length; j++) {
+          for (let k = 0; k < nounList.length; k++) {
+            let extText = extList[getRandomIntInclusive(0, extList.length - 1)];
+            output += possList[i] + adjList[j] + nounList[k] + "." + extText + "<br>";
+          }
+        }
+      }
 
-  // let nameGenerator = (a, b) => a * b;
-
-  console.log("code ran");
+  // displaying the results
+  document.querySelector(".listHere").innerHTML = output;
 };
